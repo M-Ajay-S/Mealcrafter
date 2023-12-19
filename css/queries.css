@@ -1,0 +1,346 @@
+/* we dont use px and rem in media queries as it has some bugs we use em
+ */
+/* 1rem=1em=16px 
+will not change to 1rem=10px as in html */
+
+
+
+
+
+/* 
+-General font size (px):
+10/12/14/16/18/20/24/30/36/44/52/62/74/86/98
+
+-Spacing system(px):
+2/4/8/12/16/24/32/48/64/80/96/128
+*/
+
+/* BELOW 1344px  small Desktop
+which is 84em*/
+
+@media (max-width:84em) {
+    .hero {
+        max-width: 120rem;
+    }
+
+    .heading-primary {
+        font-size: 4.4rem;
+    }
+
+    .gallery {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/*BELOW 1200px Tablet Landscape  */
+
+@media (max-width:75em) {
+
+    /* this changes all the font-size from
+     10px base to base 9px withouut manually
+      changing values of font size every where */
+
+
+    html {
+
+        font-size: 56.25%;
+    }
+
+    .heading-secondary {
+        font-size: 3.6rem;
+    }
+
+    .heading-tertiary {
+        font-size: 2.4rem;
+    }
+
+    .grid {
+        gap: 6.4rem 4.8rem;
+    }
+
+    .header {
+        padding: 0 3.2rem;
+    }
+
+    .nav-list {
+        gap: 3.2rem;
+    }
+
+    .hero {
+        gap: 4.8rem;
+    }
+
+    .testimonial-container {
+        padding: 9.6rem 8rem;
+    }
+
+    .pricing-plan {
+        padding: 3.2rem;
+    }
+
+    .pricing .grid {
+        gap: 3.2rem;
+
+    }
+
+
+
+}
+
+/* BELOW 944px Tablets */
+
+@media (max-width:59em) {
+    html {
+        font-size: 50%;
+    }
+
+    .mobile-nav {
+        display: block;
+    }
+
+
+    .nav-open .nav {
+        opacity: 1;
+        pointer-events: auto;
+        visibility: visible;
+        transform: translate(0);
+    }
+
+
+
+    .nav {
+        background-color: #fff;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(100%);
+        /* Display none doesnt allow animation */
+        transition: all 0.4s;
+        opacity: 0;
+        pointer-events: none;
+        visibility: hidden;
+
+    }
+
+    .nav-open .mobile-nav-icon[name="close-outline"] {
+        display: block;
+        z-index: 999;
+    }
+
+    .nav-open .mobile-nav-icon[name="menu-outline"] {
+        display: none;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        gap: 4.8rem;
+    }
+
+    .nav-link:link,
+    .nav-link:visited {
+        font-size: 3rem;
+    }
+
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 0 8rem;
+        gap: 6.4rem;
+    }
+
+    .hero-image {
+        width: 60%;
+
+    }
+
+    .hero-image-box,
+    .hero-text {
+        text-align: center;
+    }
+
+    .delivered-meals {
+        justify-content: center;
+        margin-top: 3.2rem;
+    }
+
+    .logos img {
+        height: 2.4rem;
+    }
+
+    .step-number {
+        font-size: 7.4rem;
+    }
+
+    .meal-content {
+        padding: 3.2rem;
+        padding-top: 2.4em;
+    }
+
+    .tag {
+        font-size: 1rem;
+        padding: 0.4rem 0.6rem;
+    }
+
+
+    .testimonials {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .pricing .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .pricing-plan:last-child {
+        grid-column: span 2;
+        margin: 0 25.75%;
+
+    }
+
+    .pricing-plan--complete::after {
+        top: 9%;
+        right: -9%;
+    }
+
+
+
+}
+
+
+/* BELOW 700px small Tablets */
+
+@media (max-width:44em) {
+
+
+    .grid-three-column,
+    .grid-four-column {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .heading-secondary {
+        margin-bottom: 4.8rem;
+    }
+
+    .diet {
+        grid-column: 1/-1;
+        justify-self: center;
+    }
+
+    .pricing .grid {
+        grid-template-columns: 1fr;
+        width: 85%;
+    }
+
+    .pricing-plan:last-child {
+        grid-column: span 1;
+        margin: 0;
+
+    }
+
+
+
+    .grid--footer {
+        grid-template-columns: repeat(6, 1fr);
+
+    }
+
+    .nav-col {
+        grid-row: 1;
+        grid-column: span 2;
+    }
+
+    .address-col {
+        grid-column: span 3;
+
+    }
+
+    .logo-col {
+        grid-column: span 3;
+
+    }
+
+}
+
+@media (max-width:34em) {
+    html {
+        font-size: 43.75%;
+    }
+
+
+    .grid-two-column,
+    .grid-three-column,
+    .grid-four-column {
+        grid-template-columns: 1fr;
+        row-gap: 4.8rem;
+    }
+
+    .hero {
+        padding: 0 3.2rem;
+    }
+
+    .hero-section {
+        padding: 2.4rem 0 4.8rem 0;
+
+    }
+
+    .btn,
+    .btn:link,
+    .btn:visited {
+        padding: 2.4rem 1.6rem;
+
+    }
+
+    .hero-image {
+        width: 80%;
+    }
+
+    .logos img {
+        height: 1.2rem;
+    }
+
+    .step-image-box:nth-child(2) {
+        grid-row: 1;
+
+    }
+
+    .step-image-box:nth-child(6) {
+        grid-row: 5;
+    }
+
+    .step-image-box {
+        transform: translateY(2.4rem);
+    }
+
+    .testimonial {
+        grid-template-columns: 1fr;
+        text-align: center;
+        row-gap: 6.4rem;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .cta-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-image-box {
+        height: 70rem;
+        background-size: cover;
+        grid-row: 1;
+    }
+
+    .cta-form input {
+        width: 100%;
+    }
+}
