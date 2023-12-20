@@ -343,4 +343,8 @@ which is 84em*/
     .cta-form input {
         width: 100%;
     }
+
+    .pricing .grid {
+        width: 100%;
+    }
 }
